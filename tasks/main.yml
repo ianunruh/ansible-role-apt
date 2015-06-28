@@ -4,10 +4,14 @@
     dest: /etc/apt/apt.conf.d/00proxy
   notify:
     - update apt cache
+  tags:
+    - install
 
 - name: update apt cache if stale
   apt:
     update_cache: yes
     cache_valid_time: 7200
+  tags:
+    - install
 
 - meta: flush_handlers
