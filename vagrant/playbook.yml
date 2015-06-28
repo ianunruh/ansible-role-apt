@@ -1,0 +1,11 @@
+- hosts: all
+  pre_tasks:
+    - name: install apt-cacher-ng
+      apt:
+        pkg: apt-cacher-ng
+        update_cache: yes
+        cache_valid_time: 7200
+  roles:
+    - apt
+  vars:
+    apt_proxy_url: http://localhost:3142
