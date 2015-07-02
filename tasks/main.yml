@@ -7,11 +7,11 @@
   tags:
     - install
 
+- meta: flush_handlers
+
 - name: update apt cache if stale
   apt:
     update_cache: yes
     cache_valid_time: 7200
   tags:
     - install
-
-- meta: flush_handlers
